@@ -25,11 +25,11 @@ class HomeworkTest {
     }
     @Test fun when_ints() {
         val when_tests = listOf(
-            0 to "zero",
-            1 to "one",
-            5 to "low number",
-            9 to "low number",
-            17.0 to "I don't understand"
+                0 to "zero",
+                1 to "one",
+                5 to "low number",
+                9 to "low number",
+                17.0 to "I don't understand"
         )
         for ((k,v) in when_tests) {
             assertEquals(whenFn(k), v)
@@ -40,10 +40,10 @@ class HomeworkTest {
     // add/sub/mathOp tests
     @Test fun addition_tests() {
         val add_tests = listOf(
-            Pair(0, 0) to 0,
-            Pair(1, 2) to 3,
-            Pair(-2, 2) to 0,
-            Pair(123, 456) to 579
+                Pair(0, 0) to 0,
+                Pair(1, 2) to 3,
+                Pair(-2, 2) to 0,
+                Pair(123, 456) to 579
         )
         for ( (k,v) in add_tests) {
             assertEquals(add(k.first, k.second), v)
@@ -52,10 +52,10 @@ class HomeworkTest {
 
     @Test fun subtraction_tests() {
         val sub_tests = listOf(
-            Pair(0, 0) to 0,
-            Pair(2, 1) to 1,
-            Pair(-2, 2) to -4,
-            Pair(456, 123) to 333
+                Pair(0, 0) to 0,
+                Pair(2, 1) to 1,
+                Pair(-2, 2) to -4,
+                Pair(456, 123) to 333
         )
         for ( (k,v) in sub_tests) {
             assertEquals(sub(k.first, k.second), v)
@@ -96,13 +96,13 @@ class HomeworkTest {
     val fifteenCAN = Money(15, "CAN")
     @Test fun Money_convertTests() {
         val tests = listOf(
-            Pair(tenUSD, tenUSD),
-            Pair(tenUSD, fiveGBP),
-            Pair(tenUSD, fifteenEUR),
-            Pair(twelveUSD, fifteenCAN),
-            Pair(fiveGBP, tenUSD),
-            Pair(fiveGBP, fifteenEUR),
-            Pair(fifteenEUR, fiveGBP)
+                Pair(tenUSD, tenUSD),
+                Pair(tenUSD, fiveGBP),
+                Pair(tenUSD, fifteenEUR),
+                Pair(twelveUSD, fifteenCAN),
+                Pair(fiveGBP, tenUSD),
+                Pair(fiveGBP, fifteenEUR),
+                Pair(fifteenEUR, fiveGBP)
         )
         for ( (from,to) in tests) {
             assertEquals(to.amount, from.convert(to.currency).amount)
@@ -110,9 +110,9 @@ class HomeworkTest {
     }
     @Test fun Money_addTests() {
         val tests = listOf(
-            Pair(tenUSD, tenUSD) to Money(20, "USD"),
-            Pair(tenUSD, fiveGBP) to Money(20, "USD"),
-            Pair(fiveGBP, tenUSD) to Money(10, "GBP")
+                Pair(tenUSD, tenUSD) to Money(20, "USD"),
+                Pair(tenUSD, fiveGBP) to Money(20, "USD"),
+                Pair(fiveGBP, tenUSD) to Money(10, "GBP")
         )
         for ( (pair, result) in tests) {
             assertEquals(result.amount, (pair.first + pair.second).amount)
